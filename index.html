@@ -7,8 +7,30 @@
     <link rel="stylesheet" href="css/app.css" />
   </head>
   <body>
-    <h1>Etch Sketch</h1>
-    <div class="container"></div>
+    <header>
+      <h1>Etch Sketch</h1>
+      <p class="layoutSize">Size: 16 X 16 (Default)</p>
+      <div class="inputContainer">
+        <div class="inputContainer-content">
+          <p>Enter your desired size of Canvas</p>
+          <p><em>Note: Canvas size: 1 to 100 squares only</em></p>
+        </div>
+        <div class="inputContainer-content">
+          <input
+            class="numInput"
+            type="number"
+            name="number"
+            id="number"
+            onkeydown="layoutSize(event)"
+          />
+          <button class="numBtn">Enter</button>
+          <button class="clearBtn">Clear</button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container"></div>
+    </main>
 
     <script src="src/app.js"></script>
   </body>
