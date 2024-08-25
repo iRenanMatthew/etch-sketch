@@ -1,9 +1,8 @@
 const container = document.querySelector(".container");
-const squareDiv = document.createElement("div");
+
 const numBtn = document.querySelector(".numBtn");
 const numInput = document.querySelector(".numInput");
 const clearBtn = document.querySelector(".clearBtn");
-squareDiv.classList.add("square");
 
 let gridSize = 0 || 16;
 let newGridSize = gridSize * gridSize || 16 * 16;
@@ -14,15 +13,16 @@ initLayout();
 // Grid Layout Square
 function gridGenerator() {
   for (let i = 1; i <= newGridSize; i++) {
-    const newSquareDiv = squareDiv.cloneNode(true);
-    newSquareDiv.addEventListener("mouseover", (event) => {
+    const squareDiv = document.createElement("div");
+    squareDiv.classList.add("square");
+    squareDiv.addEventListener("mouseover", (event) => {
       let randomColor =
         "#" + (((1 << 24) * Math.random()) | 0).toString(16).padStart(6, "0");
       event.target.style.background = randomColor;
     });
-    newSquareDiv.style.width = `calc(100% / ${gridSize})`;
-    newSquareDiv.style.height = `calc(100% / ${gridSize})`;
-    container.appendChild(newSquareDiv);
+    squareDiv.style.width = `calc(100% / ${gridSize})`;
+    squareDiv.style.height = `calc(100% / ${gridSize})`;
+    container.appendChild(squareDiv);
   }
 }
 
