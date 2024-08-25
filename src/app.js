@@ -1,5 +1,4 @@
 const container = document.querySelector(".container");
-
 const numBtn = document.querySelector(".numBtn");
 const numInput = document.querySelector(".numInput");
 const clearBtn = document.querySelector(".clearBtn");
@@ -13,6 +12,7 @@ initLayout();
 // Grid Layout Square
 function gridGenerator() {
   for (let i = 1; i <= newGridSize; i++) {
+    // it needs to create inside the for loop to create it when loops triggered. If it is outside in the for loop. It will not iterate in the desired output
     const squareDiv = document.createElement("div");
     squareDiv.classList.add("square");
     squareDiv.addEventListener("mouseover", (event) => {
